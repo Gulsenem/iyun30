@@ -13,6 +13,10 @@ function autoAdd(auto)
     let km = document.createElement("span");
     let bj = document.createElement("span");
 
+
+
+    
+
     anzeige.classList.add('anzeige');
     data.classList.add('data');
     titel.classList.add('titel');
@@ -39,9 +43,30 @@ function autoAdd(auto)
     stoff.innerHTML = auto.stoff;
     leistung.innerHTML = auto.leistung;
     km.innerHTML = auto.kilometer;
-    bj.innerHTML= auto.baujahr;
+    bj.innerHTML= auto.baujahr;    
+    
+    
+    
+    
+    let overlay = document.createElement("div");
+    overlay.classList.add('overlay');
+    anzeige.appendChild(overlay);
+    let readmore = document.createElement("button");
+    readmore.innerHTML = "Read more";
+    overlay.appendChild(readmore);
+
+    anzeige.onmouseover = function()
+    {
+        overlay.style.display = "flex";
+    }
+
+    anzeige.onmouseout =function()
+    {
+        overlay.style.display = "none";
+    }
     
 }
+
 
 function klik()
 {
